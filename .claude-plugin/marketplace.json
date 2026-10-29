@@ -1,0 +1,15 @@
+{
+  "name": "twinstub",
+  "description": "TwinStub plugins for Claude Code",
+  "owner": {
+    "name": "TwinStub",
+    "url": "https://github.com/twinstub"
+  },
+  "plugins": [
+    {
+      "name": "twinstub",
+      "source": "./",
+      "description": "Test webhook edge cases with TwinStub: duplicates, out-of-order events, bad signatures, delayed events."
+    }
+  ]
+}

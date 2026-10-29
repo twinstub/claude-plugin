@@ -1,0 +1,17 @@
+{
+  "name": "twinstub",
+  "displayName": "TwinStub",
+  "version": "1.1.0",
+  "description": "Test webhook edge cases while the agent writes an integration: duplicates, out-of-order events, bad signatures and events that arrive days later, against scenarios in YAML for any provider.",
+  "author": {
+    "name": "TwinStub",
+    "url": "https://github.com/twinstub"
+  },
+  "homepage": "https://github.com/twinstub/twinstub",
+  "repository": "https://github.com/twinstub/claude-plugin",
+  "license": "MIT",
+  "keywords": ["webhooks", "testing", "api-mocking", "payments", "idempotency", "mcp"],
+  "documentationUrl": "https://github.com/twinstub/claude-plugin#readme",
+  "supportUrl": "https://github.com/twinstub/claude-plugin/issues",
+  "privacyPolicyUrl": "https://github.com/twinstub/claude-plugin/blob/main/PRIVACY.md"
+}

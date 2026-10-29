@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "twinstub": {
+      "command": "docker",
+      "args": [
+        "run", "-i", "--rm",
+        "--add-host=host.docker.internal:host-gateway",
+        "-e", "TWINSTUB_ADMIN_URL=http://host.docker.internal:9090",
+        "ghcr.io/twinstub/twinstub:1.1.0", "mcp"
+      ]
+    }
+  }
+}

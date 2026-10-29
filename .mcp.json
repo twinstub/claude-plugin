@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "twinstub": {
+      "command": "twinstub",
+      "args": ["mcp"]
+    }
+  }
+}
