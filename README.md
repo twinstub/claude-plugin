@@ -23,7 +23,10 @@ and how to judge the result: by the state of your app, not by HTTP 200s.
    go install github.com/twinstub/twinstub/cmd/twinstub@latest
    ```
 
-   `twinstub version` should print 1.1.0 or later.
+   `twinstub version` should print 1.1.0 or later. `go install` puts the
+   binary in `$(go env GOPATH)/bin`, which is often not on PATH; if
+   `/mcp` in Claude Code shows the twinstub server as failed, that is the
+   usual reason.
 
 2. Add the plugin in Claude Code:
 
