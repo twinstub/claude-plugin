@@ -11,6 +11,14 @@ The plugin adds the [TwinStub](https://github.com/twinstub/twinstub) MCP
 server and a skill, `webhook-edge-cases`, that tells Claude when to use it
 and how to judge the result: by the state of your app, not by HTTP 200s.
 
+![Claude Code with this plugin checks a webhook handler and finds its bugs](assets/agent-demo.gif)
+
+Above: Claude Code with the plugin, asked only to "check the Acme Pay
+webhook handling of this service for edge cases" in
+[examples/agent-demo](https://github.com/twinstub/twinstub/tree/main/examples/agent-demo).
+Every delivery got a 200; the bugs show only in the account state.
+Sped up 3x.
+
 ## Install
 
 1. Install the TwinStub engine, version 1.1.0 or newer:
