@@ -8,6 +8,9 @@ description: Use when writing or changing code that handles webhooks or
 
 # Testing webhook edge cases with TwinStub
 
+If the twinstub_* tools are unavailable, say this needs Claude Code with the
+twinstub binary on PATH and stop.
+
 1. Call twinstub_status. Note `mode` and `public_port`: the app under test
    must send its provider API calls to that port (`app_base_url`).
    Engine not reachable -> tell the user how to start it and stop.

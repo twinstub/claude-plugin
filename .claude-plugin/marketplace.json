@@ -9,7 +9,7 @@
     {
       "name": "twinstub",
       "source": "./",
-      "description": "Test webhook edge cases with TwinStub: duplicates, out-of-order events, bad signatures, delayed events."
+      "description": "Test webhook handlers against what a provider sandbox can't trigger on cue: redelivered events, out-of-order delivery, bad signatures, chargebacks 30 days later."
     }
   ]
 }
