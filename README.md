@@ -21,7 +21,7 @@ Sped up 3x.
 
 ## Install
 
-1. Install the TwinStub engine, version 1.1.0 or newer:
+1. Install the TwinStub engine, version 1.1.1 or newer:
 
    Download a binary from the
    [releases page](https://github.com/twinstub/twinstub/releases) and put
@@ -31,7 +31,7 @@ Sped up 3x.
    go install github.com/twinstub/twinstub/cmd/twinstub@latest
    ```
 
-   `twinstub version` should print 1.1.0 or later. `go install` puts the
+   `twinstub version` should print 1.1.1 or later. `go install` puts the
    binary in `$(go env GOPATH)/bin`, which is often not on PATH. If
    `/mcp` in Claude Code shows the twinstub server as failed with
    `Executable not found in $PATH: "stdio"`, that is the reason: for
@@ -45,7 +45,9 @@ Sped up 3x.
    /plugin install twinstub@twinstub
    ```
 
-That is all. The plugin starts `twinstub mcp` from your PATH. If an engine
+That is all. The plugin starts `twinstub mcp` from your PATH. It runs no
+engine and holds no port until Claude first calls a TwinStub tool, so
+projects that never use TwinStub are not affected. Then, if an engine
 already runs on `localhost:9090` (`twinstub serve`), it uses that one;
 otherwise it starts its own with `twinstub.yaml` from the project, or an
 empty one that Claude fills.
@@ -57,7 +59,7 @@ Run the engine with Docker and use the server definition in
 project's `.mcp.json` instead of installing the plugin's server.
 
 ```sh
-docker run --rm -v "$PWD:/work" -p 8080:8080 -p 9090:9090 ghcr.io/twinstub/twinstub:1.1.0 serve
+docker run --rm -v "$PWD:/work" -p 8080:8080 -p 9090:9090 ghcr.io/twinstub/twinstub:1.1.1 serve
 ```
 
 The MCP server in the container reaches that engine through
@@ -104,8 +106,10 @@ Details: [docs/mcp.md](https://github.com/twinstub/twinstub/blob/main/docs/mcp.m
   injectable clock to be tested the same way.
 - A scenario is only as accurate as what you write in it. Check response
   shapes against the provider's documentation once.
-- Plugin version 1.1.0 needs engine 1.1.0 or newer. `twinstub_status`
-  says so if the engine is older.
+- Plugin version 1.1.1 expects twinstub 1.1.1 or newer. With 1.1.0 the
+  tools work, but the server starts an engine in every Claude Code
+  session, even in projects that never use TwinStub. `twinstub_status`
+  reports an engine older than 1.1.0.
 
 ## License
 

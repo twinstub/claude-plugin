@@ -1,7 +1,7 @@
 {
   "name": "twinstub",
   "displayName": "TwinStub",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Test webhook edge cases while the agent writes an integration: duplicates, out-of-order events, bad signatures and events that arrive days later, against scenarios in YAML for any provider.",
   "author": {
     "name": "TwinStub",
