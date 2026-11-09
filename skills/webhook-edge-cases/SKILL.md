@@ -1,6 +1,7 @@
 ---
 name: webhook-edge-cases
-description: Use when writing or changing code that handles webhooks or
+description: >
+  Use when writing or changing code that handles webhooks or
   integrates with an event-driven third-party API (payments, KYC, logistics,
   CRM), especially a provider whose sandbox cannot trigger rare events on cue.
   Tests orderings, delays, redeliveries and bad signatures with TwinStub.
