@@ -10,7 +10,7 @@ expected end state for each event order first, run it against TwinStub,
 and check your app's state, not just the 200s. Works with any provider:
 you describe it as a stateful scenario in YAML.
 
-![Claude finds four failing webhook cases](assets/agent-demo.gif)
+![Claude finds four failing webhook cases](https://raw.githubusercontent.com/twinstub/twinstub/v1.1.2/docs/agent-demo.gif)
 
 In the demo, Claude checks a subscription service where every webhook got
 a 200 and finds four failing cases, including an out-of-order delivery
