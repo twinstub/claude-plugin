@@ -35,11 +35,12 @@ the recording is sped up 3x.
    ```
 
    `twinstub version` should print 1.1.2 or later. `go install` puts the
-   binary in `$(go env GOPATH)/bin`, which is often not on PATH. If
-   `/mcp` in Claude Code shows the twinstub server as failed with
-   `Executable not found in $PATH: "stdio"`, that is the reason: for
-   plugin servers Claude Code prints `stdio` in place of the command name.
-   Put `twinstub` on the PATH that Claude Code starts with and restart it.
+   binary in the `bin` folder of your Go path, usually `~/go/bin`, which
+   is often not on PATH. If `/mcp` in Claude Code shows the twinstub
+   server as failed with "Executable not found" naming `stdio`, that is
+   the reason: for plugin servers Claude Code prints `stdio` in place of
+   the command name. Put `twinstub` on the PATH that Claude Code starts
+   with and restart it.
 
 2. Add the plugin in Claude Code:
 
@@ -80,7 +81,7 @@ project's `.mcp.json` instead of installing the plugin's server. Docker
 pulls the `ghcr.io/twinstub/twinstub` image from GitHub's registry.
 
 ```sh
-docker run --rm -v "$PWD:/work" -p 8080:8080 -p 9090:9090 ghcr.io/twinstub/twinstub:1.1.2 serve
+docker run --rm -v /path/to/your/project:/work -p 8080:8080 -p 9090:9090 ghcr.io/twinstub/twinstub:1.1.2 serve
 ```
 
 The MCP server in the container reaches that engine through
